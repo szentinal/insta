@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.header {
+    height: 100px;
+    background-color: orange;
+}
+
+.logoBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    margin-left: 15px;
+    padding: 15px;
+    
+}
+
+.foodImage {
+    object-fit: cover;
+    width: 100%;
+    height: 20vh;
+}
+.footer {
+    height: 100px;
+    background-color: orange;
+}
+
+.content {
+    display: flex;
+}
+
+.cartContent {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.cartContent img{
+    object-fit: contain;
+    cursor: pointer;
+}
+ 
+.sum{
+    margin-top: 25px;
+}
+.left {
+    height: 2000px;
+    width: 70%;
+    background-color: rgb(190, 197, 199);
+}
+
+.right {
+    height: 100vh;
+    width: 30%;
+    background-color: rgb(178, 171, 171);
+    position: sticky;
+    top: 0;
+
+}
+
+.cartImg{
+    display: flex;
+    margin-top: 35px;
+    margin-bottom: 55px;
+    align-items: center;
+    justify-content: center; 
+    
+}
+.contentLeft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.prizeBox {
+    background: orange;
+    width: 70%;
+    height: 100px;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.prizeBox img{
+    border: 10px;
+}
+
+
+@media (max-width: 965px) {
+
+
+    .content {
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contentLeft {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;    
+    }
+
+    .prizeBox {
+        background: orange;
+        width: 70%;
+        height: 80px;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 7px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .left {
+        width: 100%;
+        height: 70%;
+        background-color: rgb(190, 197, 199);
+    }
+    
+    .right {
+        width: 100%;
+        height: 30%;
+        background-color: rgb(178, 171, 171);
+    
+    }
+
+    .foodImage {
+        display: none;
+    }
+
+    .cartContent {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 15px;
+        margin-right: 35px;
+        margin-top: 15px;
+    }
+
+    
+}

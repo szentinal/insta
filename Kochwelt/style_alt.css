@@ -1,0 +1,52 @@
+html{
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1500px;
+    margin: 0 auto;
+    }
+
+.bg1{
+    background-color: gray;
+}
+
+
+
+.part1 .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.part1-img {
+    height: 25rem;
+    border-radius: 20px;
+    display: flex;
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+}
+
+.column-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+    
+.apply-btn {
+    background-color: rgb(1, 71, 20);
+    padding: 12px;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.apply-btn:hover {
+    background-color: rgb(241, 146, 44);
+}

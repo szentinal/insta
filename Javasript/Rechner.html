@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechner</title>
+</head>
+
+<script>
+    function add(){
+        let myFirstNumber = +document.getElementById('numb1').value;
+        let mySecondNumber = +document.getElementById('numb2').value;
+        let result = myFirstNumber + mySecondNumber;
+        // alert(myFirstNumber + mySecondNumber);
+        document.getElementById('headline').innerHTML = `Das Ergebnis ist ${result}`;
+        
+    }
+</script>
+
+<body>
+    <h1 id="headline"></h1>
+    <input id="numb1" type="number" min="0">
+    <input id="numb2" type="number" min="0">
+    <button onclick="add()">Addieren</button>
+</body>
+</html>

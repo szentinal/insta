@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willkommen bei Sakura Ramen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Open+Sans&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body {
+            margin: 0px;
+        }
+
+        .bgr1 {
+            background-image: url('./img/bgr1.jpg');
+            position: relative;
+            height: 100vh;
+            background-size: cover;
+            background-position: 50% 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .toplinkcontainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            font-size: 20px;
+            color: white;
+        }
+
+        .sakupic {
+            width: 65px;
+            padding-left: 3%;
+            padding-top: 3%;
+        }
+
+        .linksall {
+            display: flex;
+            align-items: center;
+        }
+
+        .linksall a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .linksall a:hover {
+            color: grey ;
+        }
+
+        .textlinks {
+            font-size: 20px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+        }
+
+        .textlinks a {
+            margin-left: 48px;
+            margin-right: 48px;
+        }
+
+        .phonebutton {
+            display: flex;
+            align-items: center;
+            background-color: red;
+            padding: 3px;
+            border-radius: 8px;
+            border: solid 2px white;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+        }
+
+        .phonebutton img {
+            width: 30px;
+        }
+
+        .title {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            margin-bottom: 340px;
+        }
+
+        .bold {
+
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            font-size: 80px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+
+        .regular {
+            font-family: 'Raleway', sans-serif;
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        .bgr2 {
+            height: 300px;
+            background-color: white;
+        }
+
+        .howtoorder {
+            display: flex;
+            align-items: center;
+            color: rgb(165, 42, 42);
+            justify-content: center;
+            padding: 8px;
+            font-size: 40px;
+            font-family: 'Economica', sans-serif;
+            font-weight: bold;
+        }
+
+        .choice {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .choice img {
+            margin-left: 12px;
+            width: 80px;
+        }
+
+        .choice span {
+            display: flex;
+            justify-content: center;
+            font-family: 'Economica', sans-serif;
+            font-weight: bold; 
+            font-size: 25px;
+        }
+
+        .noodle {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .broth {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .toppings {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bgr3 {
+            background-image: url('./img/background.jpg');
+            position: relative;
+            background-size: cover;
+        }
+
+        .ourmenu {
+            display: flex;
+            align-items: center;
+            color: brown;
+            justify-content: center;
+            padding-top: 32px;
+            margin-top: 0px;
+            font-family: 'Economica', sans-serif;
+            font-weight: bold;
+            font-size: 40px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+
+        }
+        
+        .price {
+            display: flex;
+            align-items: center;
+        }
+
+        .meatchoice td {
+            width: 180px;
+        }
+
+        .meatchoicetext {
+            font-family: 'Economica', sans-serif;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .l {
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold;
+            color: rgb(79, 75, 75);
+        }
+        
+        .r {
+            display: flex;
+            align-items: center;
+            padding: 40px;
+            width: 20%;
+        }
+
+        .meatprice td {
+            width: 160px;
+        }
+       
+        .bgr4 {
+            background-color: white;
+            height: 70vh;
+        }
+
+        .findus {
+            display: flex;
+            align-items: center;
+            color: rgb(155, 41, 41);
+            justify-content: center;
+            font-family: 'Raleway', sans-serif;
+            font-weight: bold; 
+            font-size: 50px;
+        }
+
+        .adress {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+
+        .lo_pic {
+            padding: 24px;
+            width: 24px;
+        }
+
+        .street {
+            font-family: 'Economica', sans-serif;
+            font-weight: normal;
+            font-size: 25px;
+        }
+
+        .google {
+            width: 100%;
+            border: 0%;
+            height: 400px;
+        }
+
+        .infobottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px;
+        }
+
+        .saklogo {
+            width: 230px;
+            padding-left: 5%; 
+        }
+
+        .social {
+            display: flex;
+            justify-content: space-around;
+            padding: 60px;
+        }
+
+        .social_pic {
+            width: 50px;
+            margin-right: 8px;
+            margin-left: 8px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="bgr1">
+        <div class="toplinkcontainer">
+            <img class="sakupic" src="img/saku.png">
+            <div class="linksall">
+                <div class="textlinks">
+                    <a href="#menu">MENU</a>
+                    <a href="#locations">LOCATIONS</a>
+                    <a href="#about">ABOUT</a>
+                </div>
+                <a class="phonebutton" href="tel: 0176 54564534">
+                    <img src="img/phone.png">
+                    <span>0176 54564534</span>
+                </a>
+            </div>
+        </div>
+        <div class="title">
+            <h1 class="bold">SAKURA RAMEN</h1>
+            <span class="regular">THE BEST RAMEN IN TOWN</span>
+        </div>
+    </div>
+
+    <div class="bgr2">
+        <h2 class="howtoorder">HOW TO ORDER</h2>
+        <div class="choice">
+            <div class="noodle">
+                <img src="img/bowl_icon.jpg"><br>
+                <span>Pick</span>
+                <span>Your Noodle</span>
+            </div>
+            <div class="broth">
+                <img  src="img/broth_icon.png"><br>
+                <span>Pick</span>
+                <span>Your Broth</span> 
+            </div>
+            <div class="toppings">
+                <img  src="img/eggs_icon.jpg"><br>
+                <span>Pick Your</span>
+                <span>Toppings</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgr3">
+        <h2 class="ourmenu">OUR MENU</h2>
+        <div class="menu">
+            <img class="r" src="img/r1.png">
+            <div class="price">
+                <div class="meatprice">
+                    <h3 class="meatchoicetext">Tonkasu Ramen</h3>
+                    <table class="l">
+                        <tr>
+                            <td>CHICKEN</td>
+                            <td>11.95 €</td>
+                        </tr>
+                        <tr>
+                            <td>BEEF</td>
+                            <td>12.95 €</td>
+                        </tr>
+                        <tr>
+                            <td>SHRIMP</td>
+                            <td>13,95 €</td>
+                        </tr>
+                    </table><br>
+                </div>
+
+            </div>
+        </div>
+    
+        <div class="menu">
+            <div class="price">
+                <div class="meatprice">
+                    <h3 class="meatchoicetext">Spicey Miso Ramen</h3>
+                    <table class="l">
+                        <tr>
+                            <td>CHICKEN</td>
+                            <td>11.95 €</td>
+                        </tr>
+                        <tr>
+                            <td>BEEF</td>
+                            <td>12.95 €</td>
+                        </tr>
+                        <tr>
+                            <td>SHRIMP</td>
+                            <td>13,95 €</td>
+                        </tr>
+                    </table><br>
+                </div>
+            </div>
+            <img class="r" src="img/r2.png">
+
+        </div>
+
+        <div class="menu">
+            <img class="r" src="img/r3.png">
+            <div class="price">
+                <div class="meatprice">
+                    <h3 class="meatchoicetext">Shio Ramen</h3>
+                    <table class="l">
+                        <tr>
+                            <td>CHICKEN</td>
+                            <td>11.95 €</td>
+                        </tr>
+                        <tr>
+                            <td>BEEF</td>
+                            <td>12.95 €</td>
+                        </tr>
+                        <tr>
+                            <td>SHRIMP</td>
+                            <td>13,95 €</td>
+                        </tr>
+                    </table><br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bgr4">
+        <h2 class="findus">Find US AT</h2>
+        <div class="adress">
+            <img class="lo_pic" src="img/LO.png">
+            <div class="street">
+                Kapuzinerstraße 31, München, BY 80337
+            </div>
+        </div>
+            <iframe class="google" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10652.832675678535!2d11.552469995626511!3d48.125508769185345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479ddf44d01affc5%3A0xe7a07e0710be63e8!2sKapuzinerstra%C3%9Fe%2031%2C%2080337%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1662970618368!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="infobottom">
+                <img class="saklogo" src="img/saklogo.png">
+                <div class="social">                 
+                        <a href="https://de-de.facebook.com/"><img class="social_pic" src="img/fb.png"></a>
+                        <a href="https://www.instagram.com/sem/campaign/emailsignup/?campaign_id=13560899670&extra_1=s|c|547348927123|e|instagram%20%27|&placement=&creative=547348927123&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13560899670%26adgroupid%3D126262456694%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1321618851291%26loc_physical_ms%3D9117013%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=EAIaIQobChMI8K2EuvqO-gIVPY1oCR2TtAh6EAAYASAAEgI03PD_BwE"><img class="social_pic" src="img/ins.png"></a>
+                        <a href="https://www.tripadvisor.de/"><img class="social_pic" src="img/tripad.png"></a>                 
+                </div>    
+            </div>
+        </div>
+    </div>    
+    
+</body>
+</html>

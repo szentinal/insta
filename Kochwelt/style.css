@@ -1,0 +1,350 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Styling for Header (Logo-navigation bar */
+/* Header */
+.header {
+    box-shadow: 0 8px 6px -8px rgb(175, 173, 173);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    font-weight: bold;
+    font-size: 1.1rem;
+
+}
+
+.nav-links li {
+    list-style-type: none;
+    padding: 1rem;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-links li a::after {
+    content: "";
+    width: 0%;
+    height: 8px;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    border-radius: 0.3rem;
+    background: rgb(146, 144, 144);
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.toggle-button {
+    width: 30px;
+    height: 24px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+.bar {
+    width: 30px;
+    height: 4px;
+    background: black;
+    border-radius: 0.6rem;
+}
+
+/* Header */
+
+/* Raphael */
+.part1 .container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.part1-img {
+    height: 18rem;
+    width: 30rem;
+    border-radius: 7px;
+    object-fit: cover;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-container h2 {
+    margin-bottom: 1.6rem;
+}
+
+.column-container a {
+    margin-top: 5.8rem;
+    text-align: center;
+}
+
+.apply-btn {
+    background-color: rgb(1, 71, 20);
+    padding: 12px;
+    width: 16rem;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.apply-btn:hover {
+    background-color: rgb(241, 146, 44);
+}
+
+/* Raphael */
+.text-box{
+  
+}
+.impressum {
+    text-align: center;
+}
+
+.datenschutz {
+    text-align: center;
+}
+
+/* Abass */
+/* Das hier ist Abass Part 1*/
+.text {
+    font-size: 16px;
+
+}
+
+.image-text {
+    font-weight: bold;
+    margin-top: 0.4rem;
+}
+
+.sectionRecipe {
+    background-color: #EFEFEF;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.sectionRecipe img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.recipeImg {
+    justify-content: space-between;
+    display: flex;
+}
+
+.text-center {
+    padding-bottom: 40px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+.subtitle {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* Das hier ist Abass Part 2*/
+.titlePan {
+    padding-bottom: 60px;
+}
+
+.sectionPan {
+    background-color: #FFFFFF;
+    padding-bottom: 100px;
+}
+
+.sectionPan img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.leftText {
+    display: flex;
+    justify-content: space-between;
+    color: gray;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Abass */
+
+
+/* Footer */
+.footer {
+    background: #2d3436;
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.social-links,
+.right-links {
+    display: flex;
+}
+
+.social-links li,
+.right-links li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.social-links li a i,
+.right-links li a {
+    transition: color 0.3s ease-in-out;
+}
+
+.social-links li a i:hover,
+.right-links li a:hover {
+    color: rgb(163, 162, 159);
+}
+
+
+.social-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 2.4rem;
+}
+
+
+.right-links li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.6rem;
+}
+
+/* Footer */
+
+/* Recipe */
+/* Detail section */
+.details-section .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-section .container .info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.food-pic img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    object-position: top;
+}
+
+.info-icon {
+    width: 4rem;
+}
+
+/* Recipe */
+/* Media queries */
+
+/* Hamburger menu */
+@media (max-width: 1060px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo-container.active {
+        display: flex;
+        padding-left: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .nav-links li:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .nav-links li a:hover::after {
+        width: 0%;
+    }
+
+
+    .container {
+        max-width: auto;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    
+}

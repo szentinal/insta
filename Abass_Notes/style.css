@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+}
+.middle{
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    padding: 30px;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.container{
+    margin: 0 auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+.notes{
+    width: 400px;
+    resize: none;
+    border: none;
+}
+
+.title{
+width: 400px;
+border: none;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.btnspan{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;  
+}
+.btn{
+    background-color: #FBBC04;
+    border-radius: 5px;
+    border-color: white;
+    padding: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color: #c2981a;
+}
+.newNotes{
+    box-shadow: -2px 0px 6px 0px rgb(0, 0, 0, 0.2);
+    padding: 30px;
+    height: 150px;
+    max-width: 500px;
+    margin: 20px;
+    overflow-wrap: break-word; 
+    overflow-y: scroll; 
+
+}
+.addNotes{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+
+}
+
+.span{
+    bottom: 0;
+    left: 0;
+}
+
+.trashImg{
+    width: 30px;
+}
+.trashImg:hover{
+    cursor: pointer;
+    filter: invert(30%);
+}
+
+@media(max-width:620px){
+    .notes{
+        width: 150px;
+    }
+    .title{
+        width: 150px;
+    }
+    .middle{
+        max-width: 250px;
+    }
+}

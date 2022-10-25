@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        img{
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        let images =['./img/pic1.jpg','./img/pic2.webp','./img/background.jpg'];
+        let currentimage =0;
+
+        // function image1(){
+        //     document.getElementById('image').src = images[0]; 
+        //     i++;
+        //     // document.getElementById('image').src = './img/pic1.jpg'; 
+        //     setTimeout(image2, 3000); 
+        // }
+
+        // function image2(){
+        //     document.getElementById('image').src = images[1];
+        //     i++;
+        //     // document.getElementById('image').src = './img/pic2.webp';
+        //     setTimeout(image3, 3000); 
+        // }
+
+        // function image3(){
+        //     document.getElementById('image').src = images[2];
+        //     i=0;
+        //     // document.getElementById('image').src = './img/background.jpg'; 
+        //     setTimeout(image1, 3000); 
+        // }
+
+        function start(){
+            showImage(currentimage);
+            currentimage++;
+
+            if (currentimage == 3){
+                currentimage=0;
+            }
+            setTimeout(start,2000);
+        }
+
+        function showImage(i){
+            document.getElementById('image').src = images[i];
+        }
+    </script>
+
+
+</head>
+<body onload="start()">
+
+<button onclick="showImage(0)">Zeig mir die Bilder</button>    
+<button onclick="showImage(1)">Zeig mir die Bilder</button>    
+<button onclick="showImage(2)">Zeig mir die Bilder</button>    
+<!-- <body onload="image2()"> -->
+    <!-- Wenn man mit einem Button es starten möchte -->
+    <!-- <button onclick="image2()">Start</button> --> 
+
+    <img id="image" src="./img/pic1.jpg" alt="">
+
+</body>
+
+</html>

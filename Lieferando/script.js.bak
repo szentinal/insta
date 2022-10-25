@@ -1,0 +1,336 @@
+let foods = ['Cheeseburger', 'Pizza Salami', 'Pizza Margherita', 'Hamburger Royal', 'Taccos mit Rind', 'Hot-Dog Special',];
+let prices = [5.60, 8.40, 5.10, 5.10, 7.50, 4.80];
+
+let BasketAmount = [];
+let BasketFood = [];
+let BasketPrice = [];
+
+
+function render() {
+    let content = document.getElementById('content');
+    content.innerHTML = '';
+    content.innerHTML = /*html*/ `
+        <div class="main">
+            <div class="main_child">
+                    <div class="main_grand_child">
+                        <div class="products" id="prod">
+                        </div>
+                        <div class="cart">
+                            <div><h2>Warenkorb</h2></div>
+                            <div class="basket" id="basket_list"><i>Warenkorb ist leer.<br> Bitte wähle ein Gericht aus!</i><br>
+                            </div>
+                            <div class="sum_main">
+                                <div class="sum">
+                                    <div>Zwischensumme:</div>                
+                                    <div id="sum">€ 0,00</div>
+                                </div>
+                                <br>
+                                <div class="sum">
+                                    <div id="shp_text"></div>                
+                                    <div id="shipping"></div>
+                                </div>
+                                <br>
+                                <div class="sum">
+                                    <div><b>Gesamt:</div>                
+                                    <div id="final_sum">€ 0,00</div></b>
+                                </div>
+                            <div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        `;
+    addFoodList();
+}
+
+
+function addFoodList() {
+    for (let i = 0; i < food.length; i++) {
+        let price = prices[i];
+        let food = foods[i]
+        let foodList = document.getElementById('prod');
+        foodList.innerHTML += /*html*/`
+            <div class="food_box_main">
+                <div class="food_box">
+                    <table>
+                        <tr>
+                        <td><b>${food}</b></td>
+                        </tr>
+                        <tr>
+                        <td>€ ${price.toFixed(2).replace('.',',')}</td>
+                        </tr>
+                    </table>
+                    <div class="food_box_add">
+                        <button id="toBasket${i}" onclick="addToBasketArray(${i})">+</button>
+                    </div>
+                </div>
+            </div>
+            `; 
+    }
+}
+
+
+function addToBasketArray(i) {
+    let food = foods[i];
+    let price = prices[i]
+    let j = BasketFood.indexOf(foods);
+    if (j == -1) {   
+        BasketAmount.push(1);
+        BasketFood.push(food);
+        BasketPrice.push(price);
+    }  
+    else {
+        BasketAmount[j]++; 
+        BasketPrice[j] = BasketPrice[j] + price;
+    }
+    loadBasket(j,i);
+}
+
+
+function loadBasket() {
+    let basket = document.getElementById('basket_list');
+    basket.innerHTML = '';
+    for (let c = 0; c < BasketFood.length; c++) {
+        let BaskPrices = BasketPrice[c];
+        basket.innerHTML += /*html*/`
+        <div class="basket_style">
+    <table>
+        <tr>
+          <td><button class="btn_small" onclick="deleteLine(${c})">x</button></td>
+          <td>  ${BasketAmount[c]}x</td>
+          <td class="foods_td">  ${BasketFood[c]}</td>
+          <td class="prices_td">€ ${BaskPrices.toFixed(2).replace('.',',')}</td>      
+          <td><button class="btn_small" onclick="basketMinus(${c})">-</button></td>
+          <td><button class="btn_small" onclick="basketPlus(${c})">+</button></td>
+        </tr>
+    </table>   
+    </div>`;
+    calculateSum();
+    }
+
+    if (BasketFood.length == 0) {
+        render();
+    }
+}
+
+
+function calculateSum() {
+    let sum = 0;
+    for (let i = 0; i < BasketAmount.length; i++) {
+        sum += BasketPrice[i];
+        document.getElementById('sum').innerHTML = '€ ' + sum.toFixed(2).replace('.',',');
+    }
+    let final_sum = sum;
+document.getElementById('shp_text').innerHTML = 'Lieferkosten:';
+    document.getElementById('shipping').innerHTML = `€ ${shippingCost.toFixed(2).replace('.',',')}`;
+    document.getElementById('final_sum').innerHTML = `€ ${final_sum.toFixed(2).replace('.',',')}`;
+}
+
+
+function basketPlus(i) {
+    let price = prices[i]
+        ++BasketAmount[i];
+        BasketPrice[i] = BasketPrice[i] + price;
+    calculateSum();
+    loadBasket(i);
+}
+
+
+
+function basketMinus(i) {
+    let price = prices[i]
+    if (BasketAmount[i] > 1) {
+        --BasketAmount[i];
+        BasketPrice[i] = BasketPrice[i] - price;
+    }
+    else {
+        BasketAmount.splice(i, 1);
+        BasketFood.splice(i, 1);
+        BasketPrice.splice(i, 1);
+    }
+    calculateSum();
+    loadBasket(i);
+}
+
+
+function deleteLine(i) {
+    loadBasket();
+    BasketAmount.splice(i, 1);
+    BasketFood.splice(i, 1);
+    BasketPrice.splice(i, 1);
+    calculateSum();
+    loadBasket();
+}
+
+
+// let prices = [2.12, 3.19, 2.57, 12.89, 3.77, .51];
+// let foods = ['Salami', 'Käse', 'Butter', 'Fisch', 'Oliven', 'Zwiebeln'];
+
+// let cartAmounts = [];
+// let cartFoods = [];
+// let cartPrices = [];
+
+// function render() {
+//     renderLeft();
+//     renderRight();
+// }
+// function renderLeft() {
+//     let content = document.getElementById('contentLeft');
+//     content.innerHTML = '';
+//     for (let i = 0; i < foods.length; i++) {
+//         const food = foods[i];
+//         const price = prices[i];
+
+//         content.innerHTML += `
+//             <div class="prizeBox"> 
+//                 <img src="img/plus-64.png">
+//                 <h2>${food} für nur: </h2>
+//                 <h2>${price} €</h2>
+//             </div>
+//         `;
+    
+//     }
+// }
+
+// function renderRight() {
+//     let content = document.getElementById('contentRight');
+//     content.innerHTML = '';
+//     for (let j = 0; j < foods.length; j++) {
+//         const cartPrice = cartPrices[j];
+//         const cartFood = cartFoods[j];
+//         const cartAmount = cartAmounts[j];
+//         content.innerHTML += /*html*/`
+//         <div>
+//         <table>
+//             <tr>
+//               <td><button class="" onclick="deleteFood(${j})">x</button></td>
+//               <td>  ${cartAmount}x</td>
+//               <td class="">  ${cartFood}</td>
+//               <div class="basket" id="basket_list"><i>Warenkorb ist leer.<br> Bitte wähle ein Gericht aus!</i><br>
+//             </tr>
+//         </table>   
+//         </div>
+//         <div id="prod"></div>
+//         `;
+//         addFoodList();
+//     }
+// }
+
+// function addFoodList() {
+//     for (let j = 0; j < foods.length; j++) {
+//         let price = prices[j];
+//         let food = foods[j]
+//         let foodList = document.getElementById('prod');
+//         foodList.innerHTML += `
+//                   <table>
+//                         <tr>
+//                         <td><b>${food}</b></td>
+//                         </tr>
+//                         <tr>
+//                         <td>€ ${price.toFixed(2).replace('.', ',')}</td>
+//                         </tr>
+//                     </table>
+//                     <div class="food_box_add">
+//                         <button id="toBasket${j}" onclick="addToBasketArray(${j})">+</button>
+//                         <div id="final_sum"></div>
+//                     </div>
+                
+
+//             `;
+//     }
+// }
+
+// function addToBasketArray(i) {
+//     let food = foods[i];
+//     let price = prices[i]
+//     let j = cartFoods.indexOf(food);
+//     if (j == -1) {
+//         cartAmounts.push(1);
+//         cartFoods.push(food);
+//         cartPrices.push(price);
+//     }
+//     else {
+//         cartAmount[j]++;
+//         cartPrice[j] = cartPrice[j] + price;
+//     }
+//     loadBasket(j, i);
+// }
+
+
+// function loadBasket() {
+//     let basket = document.getElementById('basket_list');
+//     basket.innerHTML = '';
+//     for (let c = 0; c < BasketFood.length; c++) {
+//         let BaskPrices = BasketPrice[c];
+//         basket.innerHTML += /*html*/`
+//         <div class="basket_style">
+//     <table>
+//         <tr>
+//           <td><button class="btn_small" onclick="deleteLine(${c})">x</button></td>
+//           <td>  ${BasketAmount[c]}x</td>
+//           <td class="foods_td">  ${cartFood[c]}</td>
+//           <td class="prices_td">€ ${cartPrices.toFixed(2).replace('.', ',')}</td>      
+//           <td><button class="btn_small" onclick="basketMinus(${c})">-</button></td>
+//           <td><button class="btn_small" onclick="basketPlus(${c})">+</button></td> -->
+//         </tr>
+//     </table>   
+//     </div>`;
+//         calculateSum();
+//     }
+
+//     if (BasketFood.length == 0) {
+//         render();
+//     }
+// }
+
+
+// function calculateSum() {
+//     let sum = 0;
+//     for (let i = 0; i < cartAmount.length; i++) {
+//         sum += cartPrice[i];
+//         document.getElementById('sum').innerHTML = '€ ' + sum.toFixed(2).replace('.', ',');
+//     }
+//     document.getElementById('final_sum').innerHTML = `€ ${final_sum.toFixed(2).replace('.', ',')}`;
+// }
+
+// function basketPlus(i) {
+//     let prices = price[i]
+//     ++BasketAmount[i];
+//     BasketPrice[i] = BasketPrice[i] + prices;
+//     calculateSum();
+//     loadBasket(i);
+// }
+
+
+
+// function basketMinus(i) {
+//     let price = prices[i]
+//     if (cartAmount[i] > 1) {
+//         --cartAmount[i];
+//         cartPrice[i] = cartPrice[i] - price;
+//     }
+//     else {
+//         cartAmount.splice(i, 1);
+//         cartFood.splice(i, 1);
+//         cartPrice.splice(i, 1);
+//     }
+//     calculateSum();
+//     loadBasket(i);
+// }
+
+
+// function deleteLine(i) {
+//     loadBasket();
+//     cartAmount.splice(i, 1);
+//     cartFood.splice(i, 1);
+//     cartPrice.splice(i, 1);
+//     calculateSum();
+//     loadBasket();
+// }
+
+
+// function erKommtGleich() {
+//     alert("Nicht so ungeduldig, er kommt gleich!");
+// }
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .door {
+        width: 150px;
+        height: 150px;
+        background-color: yellow;
+        margin: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 48px;
+    }
+</style>
+
+<script>
+    function insertDoor() {
+        for (let i = 0; i < 10; i++) {
+            document.getElementById('body').innerHTML += `<div class="door">${i+1}</div>`;
+        }
+    }
+</script>
+
+<body id="body" onload="insertDoor()">
+
+</body>
+
+</html>

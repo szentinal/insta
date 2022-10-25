@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function english(){
+        document.getElementById('headline').innerHTML="Hi";
+        document.getElementById('text1').innerHTML="Welcome to our awsome page!";
+    }
+
+    function german(){
+        document.getElementById('headline').innerHTML="Hallo";
+        document.getElementById('text1').innerHTML="Hallo auf dieser tollen Seite!";
+    }
+</script>
+
+<body>
+    <a href="#" onclick="german()">Deutsch</a> | <a href="#" onclick="english()">Englisch</a>
+
+    <h1 id="headline">Hallo</h1>
+
+    <p id="text1">Hallo auf dieser tollen Seite</p>
+</body>
+</html>
