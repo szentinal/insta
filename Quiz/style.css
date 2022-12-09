@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(195, 195, 249) !important;
+}
+
+.quizCard{
+    width: 15rem;
+}
+
+.question-footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    background-color: rgb(195, 195, 249) !important;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-answer-card:hover {
+    cursor: pointer;
+    background-color: rgba(0,0, 0, 0.05);
+}

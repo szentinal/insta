@@ -127,13 +127,13 @@ function time(){
 
 function search(){
     let search = document.getElementById('search').value;
-    search = search.toLowerCase();
-    const post = posts[i];
+    search = search.toLowerCase();  
     let searchField = "author";
     let searchVal = "mySearch";
-    for (let i=0 ; i < post.length ; i++)
+    for (let i=0 ; i < posts.length ; i++)
     {
-        if (post[i][searchField] == searchVal) {
+        const post = posts[i];
+        if (post[searchField] == searchVal) {
         // results.push(obj.list[i]);
         fullScreen(i);
         }
